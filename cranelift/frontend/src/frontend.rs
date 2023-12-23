@@ -721,13 +721,13 @@ impl<'a> FunctionBuilder<'a> {
 
     /// Returns `true` if and only if no instructions have been added since the last call to
     /// `switch_to_block`.
-    fn is_pristine(&self, block: Block) -> bool {
+    pub fn is_pristine(&self, block: Block) -> bool {
         self.func_ctx.status[block] == BlockStatus::Empty
     }
 
     /// Returns `true` if and only if a terminator instruction has been inserted since the
     /// last call to `switch_to_block`.
-    fn is_filled(&self, block: Block) -> bool {
+    pub fn is_filled(&self, block: Block) -> bool {
         self.func_ctx.status[block] == BlockStatus::Filled
     }
 }
